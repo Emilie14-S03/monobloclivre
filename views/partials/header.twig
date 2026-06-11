@@ -1,0 +1,20 @@
+<header>
+	{% if userLogged %}
+        <p>Bonjour {{userLogged.firstName}}</p>
+		<ul>
+
+			<li>
+				<a href="/addbook">ajout de livre</a>
+			</li>
+			<li>
+				<a href="/logout">déconnexion</a>
+			</li>
+		</ul>
+	{% else %}
+		<ul>
+
+			<li><a href="/login">Connexion</a></li>
+			<li><a href="/subscribe">Inscription</a></li>
+		</ul>
+	{% endif %}
+</header>

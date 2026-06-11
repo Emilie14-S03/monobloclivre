@@ -1,0 +1,27 @@
+{% extends "../layouts/base.twig" %}
+
+{% block main %}
+
+	<h1>Dashboard</h1>
+	<section>
+		{% if user.books|length > 0 %}
+            {% for book in user.books %}
+                <article>
+                    <h2>Titre: {{book.title}}</h2>
+                    <p>Auteur: {{book.author}}</p>
+                    <div>
+                        <a href="/editbook/{{book.id}}">Modifier</a>
+                        <a href="/deletebook/{{book.id}}">Supprimer</a>
+                    </div>
+                </article>
+            {% endfor %}
+
+		{% else %}
+				<p>Aucun livre dispo</p>
+		{% endif %}
+	</section>
+
+{% endblock %}
+
+{# si on a des livre on les affiche #}
+{# sinon on affiche pas de livre dispo #}
